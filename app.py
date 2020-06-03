@@ -1,4 +1,4 @@
-# 架設伺服器 flask
+# 用flask 架設伺服器
 from flask import Flask, request, abort
 
 from linebot import (
@@ -13,8 +13,10 @@ from linebot.models import (
 
 app = Flask(__name__)
 
-line_bot_api = LineBotApi('YOUR_CHANNEL_ACCESS_TOKEN')
-handler = WebhookHandler('YOUR_CHANNEL_SECRET')
+# Channel access token
+line_bot_api = LineBotApi('R6WS+FrE4vSkN0HSfDdj4jNB4cngBifDVw7yRBARu2tpCdqyCZDFuMcVRuD06Cgo/WUIm4yk5Hj6I9exPP0hRQdoInkPBNnliRuRgywmmDp6V5Ruz81VL1COEggCiL+D4I85gocP39MPOXdgq3NNtQdB04t89/1O/w1cDnyilFU=')
+# Channel secret
+handler = WebhookHandler('9cc85ca5db0abd79a24e485dcf9ae869')
 
 
 @app.route("/callback", methods=['POST'])
