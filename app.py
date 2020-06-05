@@ -41,19 +41,13 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    req = TextSendMessage(text="女神那麼正還不看來影片?")
+    req1 = TextSendMessage(text="女神那麼正還不看來影片?")
+    req2 = TextSendMessage(text="https://www.youtube.com/watch?v=aV4S2YYCYe0&t=8s")
     sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002747')
-    video_message = VideoSendMessage(
-        original_content_url='https://github.com/e5a27123/line_bot/blob/master/test.mp4',
-        preview_image_url='https://github.com/e5a27123/line_bot/blob/master/maxresdefault.jpg')
-
-    image_message = ImageSendMessage(
-    original_content_url='https://github.com/e5a27123/line_bot/blob/master/maxresdefault.jpg',
-    preview_image_url='https://github.com/e5a27123/line_bot/blob/master/maxresdefault.jpg')
-
-    r = [req, image_message, sticker_message]
+    
+    r = [req1, req2, sticker_message]
 
     line_bot_api.reply_message(
         event.reply_token,
