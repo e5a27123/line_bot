@@ -45,8 +45,10 @@ def handle_message(event):
     sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002747')
+    video_message = VideoSendMessage(
+        original_content_url='https://www.youtube.com/watch?v=aV4S2YYCYe0')
 
-    r = [req, https://www.youtube.com/watch?v=aV4S2YYCYe0, sticker_message]
+    r = [req, video_message, sticker_message]
 
     line_bot_api.reply_message(
         event.reply_token,
