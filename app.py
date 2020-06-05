@@ -44,7 +44,11 @@ def handle_message(event):
     req = "女神好正"
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=req))
+        TextSendMessage(text=req)
+        sticker_message = StickerSendMessage(
+        package_id='1',
+         sticker_id='1')
+        )
 
 
 if __name__ == "__main__":
