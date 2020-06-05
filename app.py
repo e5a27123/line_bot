@@ -46,11 +46,11 @@ def handle_message(event):
             package_id='11537',
             sticker_id='52002747')
 
-    req = req + ',' + sticker_message
+    r = [req, sticker_message]
 
     line_bot_api.reply_message(
         event.reply_token,
-        req)
+        r)
 
     # line_bot_api.reply_message(
     #     event.reply_token,
