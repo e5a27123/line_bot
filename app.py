@@ -25,6 +25,7 @@ try:
 except InvalidSignatureError:
         print("error")
         abort(400)
+return 'error'
 
 
 @app.route("/callback", methods=['POST'])
