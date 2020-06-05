@@ -43,9 +43,11 @@ def handle_message(event):
     msg = event.message.text
     req = "女神好正"
     line_bot_api.reply_message(
-        TextSendMessage(text=req),
-        StickerSendMessage(package_id='11537',sticker_id='52002747')
-        )
+        # TextSendMessage(text=req),
+        StickerSendMessage(
+            package_id='11537',
+            sticker_id='52002747')
+    )
 
 
 if __name__ == "__main__":
