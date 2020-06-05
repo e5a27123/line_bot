@@ -40,6 +40,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    # get user id when reply
+    user_id = event.source.user_id
+    print("user_id =", user_id)
     msg = event.message.text
     req1 = TextSendMessage(text="女神那麼正還不看來影片?")
     req2 = TextSendMessage(text="https://www.youtube.com/watch?v=aV4S2YYCYe0&t=8s")
