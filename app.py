@@ -42,12 +42,14 @@ def callback():
 def handle_message(event):
     msg = event.message.text
     req = "女神好正"
-    line_bot_api.reply_message(
-        # TextSendMessage(text=req),
-        StickerSendMessage(
+    sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002747')
-    )
+
+    line_bot_api.reply_message(
+        event.reply_token,
+        #TextSendMessage(text=req),
+        sticker_message)
 
 
 if __name__ == "__main__":
