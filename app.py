@@ -41,18 +41,20 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    req = "女神好正"
+    req = TextSendMessage(text="女神好正")
     sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002747')
 
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=req))
+    req = req + ',' + sticker_message
 
     line_bot_api.reply_message(
         event.reply_token,
-        StickerSendMessage(package_id='11537',sticker_id='52002747'))
+        req)
+
+    # line_bot_api.reply_message(
+    #     event.reply_token,
+    #     StickerSendMessage(package_id='11537', sticker_id='52002747'))
 
 
 if __name__ == "__main__":
