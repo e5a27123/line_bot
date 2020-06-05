@@ -46,7 +46,7 @@ def handle_message(event):
             package_id='11537',
             sticker_id='52002747')
     video_message = VideoSendMessage(
-        original_content_url='https://www.youtube.com/watch?v=aV4S2YYCYe0',
+        original_content_url='https://github.com/e5a27123/line_bot/blob/master/test.mp4',
         preview_image_url='https://github.com/e5a27123/line_bot/blob/master/maxresdefault.jpg')
 
     r = [req, video_message, sticker_message]
