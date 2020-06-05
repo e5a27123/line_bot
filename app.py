@@ -41,12 +41,12 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     msg = event.message.text
-    req = TextSendMessage(text="女神好正")
+    req = TextSendMessage(text="女神那麼正還不看來影片?")
     sticker_message = StickerSendMessage(
             package_id='11537',
             sticker_id='52002747')
 
-    r = [req, sticker_message]
+    r = [req, https://www.youtube.com/watch?v=aV4S2YYCYe0, sticker_message]
 
     line_bot_api.reply_message(
         event.reply_token,
