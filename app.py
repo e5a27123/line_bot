@@ -46,14 +46,11 @@ def handle_message(event):
         msg = '帥哥安安'
     if event.message.text.find('帥嗎'):
         msg = '超帥'
+    if event.message.text.find('我好帥'):   
         sticker_message = StickerSendMessage(
         package_id='11537',
         sticker_id='52002747'
-        )
-        line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=msg))
-
+        )   
         line_bot_api.reply_message(
         event.reply_token,
         sticker_message)
