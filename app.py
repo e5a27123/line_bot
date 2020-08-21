@@ -18,15 +18,6 @@ line_bot_api = LineBotApi('R6WS+FrE4vSkN0HSfDdj4jNB4cngBifDVw7yRBARu2tpCdqyCZDFu
 # Channel secret
 handler = WebhookHandler('9cc85ca5db0abd79a24e485dcf9ae869')
 
-# push message
-to = 'U30dcdc958715d15d869b76f1f8256f54'
-try:
-    line_bot_api.push_message(to, TextSendMessage(test="帥哥"))
-except InvalidSignatureError:
-        print("error")
-        abort(400)
-
-
 
 @app.route("/callback", methods=['POST'])
 def callback():
