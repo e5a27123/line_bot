@@ -44,7 +44,7 @@ def handle_message(event):
     hi_text = ['hi', '嗨', '你好']
     if event.message.text in hi_text:
         msg = '帥哥安安'
-    if event.message.text in '帥嗎':
+    if event.message.text.find('帥嗎'):
         msg = '超帥'
 
     line_bot_api.reply_message(
