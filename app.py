@@ -25,7 +25,7 @@ try:
 except InvalidSignatureError:
         print("error")
         abort(400)
-return 'error'
+
 
 
 @app.route("/callback", methods=['POST'])
@@ -49,25 +49,9 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    # get user id when reply
-    user_id = event.source.user_id
-    print("user_id =", user_id)
-    msg = event.message.text
-    req1 = TextSendMessage(text="女神那麼正還不看來影片?")
-    req2 = TextSendMessage(text="https://www.youtube.com/watch?v=aV4S2YYCYe0&t=8s")
-    sticker_message = StickerSendMessage(
-            package_id='11537',
-            sticker_id='52002747')
-    
-    r = [req1, req2, sticker_message]
-
     line_bot_api.reply_message(
         event.reply_token,
-        r)
-
-    # line_bot_api.reply_message(
-    #     event.reply_token,
-    #     StickerSendMessage(package_id='11537', sticker_id='52002747'))
+        StickerSendMessage(text=event.message.text))
 
 
 if __name__ == "__main__":
