@@ -45,9 +45,9 @@ def handle_message(event):
     msg = ''
     if event.message.text in hi_text:
         msg = '帥哥安安'
-    elif event.message.text.find('帥嗎'):
+    elif '帥嗎' in event.message.text:
         msg = '超帥'
-    elif event.message.text == '我好帥':   
+    elif '我好帥' in event.message.text:   
         sticker_message = StickerSendMessage(
         package_id='11537',
         sticker_id='52002747'
